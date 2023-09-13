@@ -1,0 +1,18 @@
+From stack Overflow
+
+set the global variables by using this command:
+mysql> SET GLOBAL local_infile=1;
+Query OK, 0 rows affected (0.00 sec)
+quit current server:
+mysql> quit
+Bye
+connect to the server with local-infile system variable :
+mysql --local-infile=1 -u root -p
+
+
+LOAD DATA LOCAL INFILE '..../ACCESSORIES.csv'
+INTO TABLE products
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
